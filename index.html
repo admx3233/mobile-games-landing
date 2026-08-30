@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download the best mobile games for your smartphone. Play thousands of exciting games instantly. Safe, fast, and free downloads.">
+    <meta name="keywords" content="mobile games, download games, Android games, iOS games, free games, game download">
+    <meta name="author" content="Mobile Games Hub">
+    <meta name="theme-color" content="#6366f1">
+    <meta property="og:title" content="Mobile Games - Download Your Favorite Games">
+    <meta property="og:description" content="Download the best mobile games instantly. Free and safe downloads.">
+    <meta property="og:type" content="website">
+    <title>Mobile Games Hub - Download Best Games for Your Phone</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --accent-color: #ec4899;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo::before {
+            content: "🎮";
+            font-size: 2rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: var(--transition);
+            font-weight: 600;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+            }
+            50% {
+                box-shadow: 0 10px 50px rgba(99, 102, 241, 0.6);
+            }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
+        }
+
+        /* ===== GAMES SECTION ===== */
+        .games-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--text-primary);
+            font-weight: 900;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Mobile: 2 columns */
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        /* Desktop: 4 columns */
+        @media (min-width: 1024px) {
+            .games-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            display: flex;
+            flex-direction: column;
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .game-card:nth-child(1) { animation-delay: 0.1s; }
+        .game-card:nth-child(2) { animation-delay: 0.2s; }
+        .game-card:nth-child(3) { animation-delay: 0.3s; }
+        .game-card:nth-child(4) { animation-delay: 0.4s; }
+        .game-card:nth-child(5) { animation-delay: 0.5s; }
+        .game-card:nth-child(6) { animation-delay: 0.6s; }
+        .game-card:nth-child(7) { animation-delay: 0.7s; }
+        .game-card:nth-child(8) { animation-delay: 0.8s; }
+
+        .game-card:hover {
+            transform: translateY(-15px);
+            border-color: rgba(99, 102, 241, 0.6);
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.3);
+        }
+
+        .game-image {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .game-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        .game-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .game-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .game-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .game-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .stars {
+            color: #fbbf24;
+        }
+
+        .download-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .download-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 3rem 1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            border-color: rgba(99, 102, 241, 0.6);
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+            margin-top: 4rem;
+            padding: 3rem 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+            color: var(--text-secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--card-bg);
+            border-radius: 50%;
+            color: var(--primary-color);
+            transition: var(--transition);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .header-container {
+                padding: 1rem;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .games-section {
+                padding: 2rem 1rem;
+            }
+
+            .section-title {
+                margin-bottom: 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Loading animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Mobile Games Hub</div>
+            <nav>
+                <a href="#games">Games</a>
+                <a href="#features">Features</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Download Your Favorite Games</h1>
+        <p>Discover thousands of exciting mobile games. Fast, safe, and completely free downloads. Experience premium gaming on your fingertips.</p>
+        <button class="cta-button" onclick="_KB()">Get Started</button>
+    </section>
+
+    <!-- GAMES SECTION -->
+    <section class="games-section" id="games">
+        <h2 class="section-title">Popular Games</h2>
+        <div class="games-grid">
+            <!-- Game 1 -->
+            <div class="game-card">
+                <div class="game-image">🎯</div>
+                <div class="game-info">
+                    <div>
+                        <h3 class="game-title">Action Heroes</h3>
+                        <p class="game-description">Epic action-packed adventure with stunning graphics</p>
+                        <div class="game-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>(4.8)</span>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="_KB()">Download</button>
+                </div>
+            </div>
+
+            <!-- Game 2 -->
+            <div class="game-card">
+                <div class="game-image">⚡</div>
+                <div class="game-info">
+                    <div>
+                        <h3 class="game-title">Speed Rush</h3>
+                        <p class="game-description">High-speed racing game with amazing tracks</p>
+                        <div class="game-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(4.6)</span>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="_KB()">Download</button>
+                </div>
+            </div>
+
+            <!-- Game 3 -->
+            <div class="game-card">
+                <div class="game-image">🧩</div>
+                <div class="game-info">
+                    <div>
+                        <h3 class="game-title">Puzzle Master</h3>
+                        <p class="game-description">Challenge your mind with thousands of puzzles</p>
+                        <div class="game-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>(4.9)</span>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="_KB()">Download</button>
+                </div>
+            </div>
+
+            <!-- Game 4 -->
+            <div class="game-card">
+                <div class="game-image">🎮</div>
+                <div class="game-info">
+                    <div>
+                        <h3 class="game-title">Battle Royale</h3>
+                        <p class="game-description">Multiplayer battle with intense gameplay</p>
+                        <div class="game-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>(4.7)</span>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="_KB()">Download</button>
+                </div>
+            </div>
+
+            <!-- Game 5 -->
+            <div class="game-card">
+                <div class="game-image">🌟</div>
+                <div class="game-info">
+                    <div>
+                        <h3 class="game-title">Adventure Quest</h3>
+                        <p class="game-description">Explore magical worlds and solve mysteries</p>
+                        <div class="game-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(4.5)</span>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="_KB()">Download</button>
+                </div>
+            </div>
+
+            <!-- Game 6 -->
+            <div class="game-card">
+                <div class="game-image">🏀</div>
+                <div class="game-info">
+                    <div>
+                        <h3 class="game-title">Sports Legends</h3>
+                        <p class="game-description">Play your favorite sports with realistic physics</p>
+                        <div class="game-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>(4.8)</span>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="_KB()">Download</button>
+                </div>
+            </div>
+
+            <!-- Game 7 -->
+            <div class="game-card">
+                <div class="game-image">🎪</div>
+                <div class="game-info">
+                    <div>
+                        <h3 class="game-title">Casual Fun</h3>
+                        <p class="game-description">Relaxing gameplay perfect for all ages</p>
+                        <div class="game-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>(4.4)</span>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="_KB()">Download</button>
+                </div>
+            </div>
+
+            <!-- Game 8 -->
+            <div class="game-card">
+                <div class="game-image">🚀</div>
+                <div class="game-info">
+                    <div>
+                        <h3 class="game-title">Space Explorer</h3>
+                        <p class="game-description">Journey through the cosmos with amazing visuals</p>
+                        <div class="game-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>(4.9)</span>
+                        </div>
+                    </div>
+                    <button class="download-btn" onclick="_KB()">Download</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features-section" id="features">
+        <h2 class="section-title">Why Choose Us?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>High-speed downloads with optimized servers to get your games quickly</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>100% Safe</h3>
+                <p>All games are scanned and verified for safety and security</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Completely Free</h3>
+                <p>Download premium games without paying anything</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Works Everywhere</h3>
+                <p>Compatible with all Android and iOS devices</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#about">About Mobile Games Hub</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#press">Press</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#report">Report Issue</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#dmca">DMCA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#facebook" aria-label="Facebook">f</a>
+                        <a href="#twitter" aria-label="Twitter">𝕏</a>
+                        <a href="#instagram" aria-label="Instagram">📷</a>
+                        <a href="#youtube" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mobile Games Hub. All rights reserved. | Designed with ❤️ for gamers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Custom download function that will call your external script
+        function _KB() {
+            console.log('Download initiated - _KB() called');
+            // This will be called when user clicks download button
+            // Add your custom script logic here
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animation for elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.game-card, .feature-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            observer.observe(el);
+        });
+
+        // Performance optimization - lazy load images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.style.opacity = '1';
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('.game-image').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
+</html>
